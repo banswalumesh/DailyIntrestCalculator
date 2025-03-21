@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Compound Interest Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Compound Interest Calculator</h1>
+        <form id="calc-form">
+            <label for="principal">Principal Amount ($):</label>
+            <input type="number" id="principal" step="0.01" required>
+
+            <label for="rate">Annual Interest Rate (%):</label>
+            <input type="number" id="rate" step="0.01" required>
+
+            <label for="time">Time (Years):</label>
+            <input type="number" id="time" step="0.01" required>
+
+            <label for="frequency">Compounding Frequency:</label>
+            <select id="frequency">
+                <option value="365">Daily (365 times/year)</option>
+                <option value="12">Monthly (12 times/year)</option>
+                <option value="4">Quarterly (4 times/year)</option>
+                <option value="2">Semi-Annually (2 times/year)</option>
+                <option value="1">Annually (1 time/year)</option>
+            </select>
+
+            <button type="button" onclick="calculate()">Calculate</button>
+        </form>
+
+        <div id="results" class="results">
+            <h2>Results</h2>
+            <p>Final Amount: <span id="final-amount">$0.00</span></p>
+            <p>Interest Earned: <span id="interest-earned">$0.00</span></p>
+        </div>
+
+        <div id="breakdown" class="breakdown">
+            <h2>Breakdown</h2>
+            <table id="breakdown-table">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Balance</th>
+                        <th>Interest Earned</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
